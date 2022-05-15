@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+}
+
+.App-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 100px);
+  background-color: #282c34;
+  min-height: 364px;
+}
