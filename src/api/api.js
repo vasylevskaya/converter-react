@@ -18,7 +18,7 @@ export const getLatestCurrencyValues = async (base, symbols) => {
     console.error(error)
   }
 
-  return mainResult.rates.UAH.toFixed(2)
+  return mainResult?.rates?.UAH?.toFixed(2)
 }
 
 export const exchangeCurrency = async (fromCurrency, toCurrency, amount) => {
@@ -32,5 +32,5 @@ export const exchangeCurrency = async (fromCurrency, toCurrency, amount) => {
     console.error(error)
   }
 
-  return mainResult.result.toFixed(2)
+  return mainResult?.result?.toFixed(2)
 }
