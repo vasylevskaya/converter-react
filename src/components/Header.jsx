@@ -9,13 +9,9 @@ const Header = () => {
   const [latestCurrencyValues, setLatestCurrencyValues] = useState({ EUR: null, USD: null })
 
   useEffect(() => {
-    [EUR, USD].forEach((baseCurrency) => {
-      getLatestCurrencyValues(baseCurrency, [UAH])
-        .then(resolve => setLatestCurrencyValues((prevState) => (
-          { ...prevState, [baseCurrency]: resolve}
-        )))
-        .catch(error => console.error(error))
-    })
+    getLatestCurrencyValues([EUR, USD], UAH)
+      .then(resolve => setLatestCurrencyValues(resolve))
+      .catch(error => console.error(error))
   }, [])
 
   return (
